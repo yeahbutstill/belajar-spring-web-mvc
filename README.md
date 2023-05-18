@@ -81,3 +81,21 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - MockMvcRequestBuilders.*
 - MockMvcResultMatchers.*
 - MockMvcResultHandlers.*
+
+## Integration Test
+- Saat kita menggunakan MockMVC, Spring tidak akan menjalankan aplikasi web kita
+- Spring hanya menyediakan mock request dan mock response
+- Test yang mengsimulasikan saat aplikasi berjalan adalah menggunakan mode Integration Test
+- Integration Test artinya adalah menjalankan aplikasi web secara lengkap, bersama dengan web server nya (Apache Tomcat)
+- Secara otomatis kita bisa menjalankan aplikasi web ketika test berjalan, dan menghentikannya ketika test selesai
+
+## Test Rest Template
+- Berbeda ketika kita menggunakan MockMVC, saat menggunakan mode Integration Test, karena tidak menggunakan mock lagi, maka untuk mengetest aplikasi, kita harus benar-benar mengirim request ke aplikasi web
+- Spring memiliki HTTP Client bernama RestTemplate, yang akan kita bahas di materi khusus
+- Dan spesial untuk integration test, kita bisa menggunakan object TestRestTemplate
+
+## Random Port
+- Secara default, saat menjalankan Integration Test, spring akan menjalankan aplikasi sesuai dengan port di properties server.port
+- Namun kadang-kadang, portnya bentrok dengan port lain, oleh karena itu direkomendasikan menggunakan random port
+- Random port artinya Spring akan mencoba mendeteksi port yang belum digunakan, nanti secara otomatis akan menggunakan port tersebut
+- Untuk mendapatkan nilai port nya, kita bisa menggunakan inject @Value("${local.server.port}") atau lebih mudah menggunakan @LocalServerPort
