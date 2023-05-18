@@ -55,3 +55,18 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Saat kita belajar menggunakan Servlet, untuk membuat Routing pada Servlet kita menggunakan annotation WebServlet
 - Di Spring WebMVC, untuk menambahkan Routing, kita bisa menggunakan annotation RequestMapping pada method yang ingin kita jadikan sebagai Controller Handler nya
 - https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html 
+
+## Menjalankan Web
+- Spring Boot secara default menambahkan Apache Tomcat sebagai Embedded Web Server
+- Hal ini menjadikan kita tidak perlu lagi untuk membuat aplikasi Spring Boot dalam bentuk War, dan tidak perlu melakukan deployment secara manual ke Apache Tomcat
+- Secara default, Spring Boot menggunakan port 8080 untuk menjalankan Apache Tomcat nya
+- Jika kita mengubah port nya, kita bisa gunakan properties
+- server.port=NOMOR
+- Pada application.properties
+
+## Servlet Request dan Response
+- Saat kita membuat Controller Handler dengan RequestMapping
+- Kita bisa menambahkan parameter HttpServletRequest atau HttpServletResponse jika memang butuh object tersebut
+- Tidak ada aturan posisi parameter, karena Spring WebMVC bisa mendeteksi secara automatis tipe dan posisi parameter nya
+
+## 
