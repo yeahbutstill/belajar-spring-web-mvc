@@ -64,4 +64,13 @@ class HelloControllerTest {
         );
     }
 
+    @Test
+    void testNotAllowedPost() throws Exception {
+        mockMvc.perform(post("/helloworld")
+                .queryParam("name", "Budi")
+        ).andExpectAll(
+                status().isMethodNotAllowed()
+        );
+    }
+
 }

@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class HelloController {
 
     }
 
-    @RequestMapping(path = "/helloworld")
+    @GetMapping(path = "/helloworld")
     public void helloWorld3(HttpServletResponse response, HttpServletRequest request) throws IOException {
 
         String name = request.getParameter("name");

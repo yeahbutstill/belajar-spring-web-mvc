@@ -120,3 +120,15 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Selain itu, Spring juga bisa secara otomatis meregistrasikan Mock object tersebut sebagai bean, sehingga class yang membutuhkan bean tersebut, secara otomatis bisa mendapatkan Mock object yang kita buat
 - Untuk membuat Mock Bean, kita cukup gunakan annotation @MockBean
 - https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/mock/mockito/MockBean.html 
+
+## Request Method
+- Saat kita menggunakan RequestMapping terdapat attribute method yang bisa kita gunakan untuk menentukan jenis HTTP Method yang diperbolehkan
+- Secara default, jika kita tidak memilihnya, maka Controller Method tersebut bisa diakses oleh seluruh jenis HTTP Method
+- Jika kita mengirim method yang tidak diperbolehkan, maka Spring akan menolak dengan response 405 Method Not Allowed
+
+## Shortcut Annotation
+- GET - @GetMapping
+- POST - @PostMapping
+- PUT - @PutMapping
+- PATCH - @PatchMapping
+- DELETE - @DeleteMapping
