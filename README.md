@@ -69,4 +69,15 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Kita bisa menambahkan parameter HttpServletRequest atau HttpServletResponse jika memang butuh object tersebut
 - Tidak ada aturan posisi parameter, karena Spring WebMVC bisa mendeteksi secara automatis tipe dan posisi parameter nya
 
-## 
+## Mock MVC
+- Saat kita membuat Web menggunakan Spring WebMVC, Spring telah menyediakan fitur bernama MockMVC
+- Fitur ini digunakan untuk mempermudah kita melakukan unit test
+- Dengan menggunakan MockMVC, kita bisa mengetest semua Controller yang kita buat, tanpa harus menjalankan aplikasi Web nya, dan tidak perlu melakukan pengetesan secara manual menggunakan Browser atau HTTP Client
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/web/servlet/MockMvc.html 
+
+## Static Import
+- Ketika menggunakan MockMVC, kita butuh beberapa static utility method dari class-class berikut
+- MockMvcBuilders.*
+- MockMvcRequestBuilders.*
+- MockMvcResultMatchers.*
+- MockMvcResultHandlers.*
