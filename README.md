@@ -114,3 +114,9 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Sedangkan class yang membutuhkan Service Layer tersebut, akan menggunakan Interface nya, bukan class implementasinya
 - Salah satu keuntungan mengekspos Interface dibandingkan Class adalah, kita bisa mengubah atau mengganti isi dari class implementasi, tanpa berdampak pada class lain yang menggunakan interface nya
 
+## Mock Bean
+- Saat kita belajar di kelas Java Unit Test, kita sudah belajar tentang melakukan mock menggunakan Mockito
+- Saat kita menggunakan Spring, kita juga melakukan hal tersebut
+- Selain itu, Spring juga bisa secara otomatis meregistrasikan Mock object tersebut sebagai bean, sehingga class yang membutuhkan bean tersebut, secara otomatis bisa mendapatkan Mock object yang kita buat
+- Untuk membuat Mock Bean, kita cukup gunakan annotation @MockBean
+- https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/mock/mockito/MockBean.html 
