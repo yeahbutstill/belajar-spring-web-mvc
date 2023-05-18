@@ -45,3 +45,13 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 
 ## Cara Kerja Spring Web MVC
 <img src="img_1.png">
+
+## Controller
+- Untuk membuat Controller di Spring, kita bisa menggunakan annotation Controller
+- Di annotation Controller sendiri, sebenarnya terdapat annotation Component, hal ini membuat class yang kita tambahkan annotation Controller, akan secara automatis teregistrasi sebagai Bean
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Controller.html 
+
+## Request Mapping 
+- Saat kita belajar menggunakan Servlet, untuk membuat Routing pada Servlet kita menggunakan annotation WebServlet
+- Di Spring WebMVC, untuk menambahkan Routing, kita bisa menggunakan annotation RequestMapping pada method yang ingin kita jadikan sebagai Controller Handler nya
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html 
