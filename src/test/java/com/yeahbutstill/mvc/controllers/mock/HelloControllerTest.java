@@ -1,7 +1,6 @@
-package com.yeahbutstill.mvc.mock;
+package com.yeahbutstill.mvc.controllers.mock;
 
 import com.yeahbutstill.mvc.services.HelloService;
-import org.aspectj.lang.annotation.Before;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +11,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-
 
 import static org.springframework.test.web.servlet.MockMvcBuilder.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -37,7 +35,7 @@ class HelloControllerTest {
     }
 
     @Test
-    void helloGeust1() throws Exception {
+    void helloGeust() throws Exception {
         mockMvc.perform(get("/helloname"))
                 .andExpectAll(
                         status().isOk(),
@@ -47,11 +45,12 @@ class HelloControllerTest {
 
     @Test
     void helloName() throws Exception {
-        mockMvc.perform(get("/helloname").queryParam("name", "Dani"))
-                .andExpectAll(
-                        status().isOk(),
-                        content().string(Matchers.containsString("Hello Dani"))
-                );
+        mockMvc.perform(get("/helloname")
+                .queryParam("name", "Dani")
+        ).andExpectAll(
+                status().isOk(),
+                content().string(Matchers.containsString("Hello Dani"))
+        );
     }
 
     @Test
@@ -70,6 +69,16 @@ class HelloControllerTest {
                 .queryParam("name", "Budi")
         ).andExpectAll(
                 status().isMethodNotAllowed()
+        );
+    }
+
+    @Test
+    void testRequestParam() throws Exception {
+        mockMvc.perform(get("/helloworld")
+                .queryParam("name", "Budi")
+        ).andExpectAll(
+                status().isOk(),
+                content().string(Matchers.containsString("Hello Guys"))
         );
     }
 

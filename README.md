@@ -132,3 +132,14 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - PUT - @PutMapping
 - PATCH - @PatchMapping
 - DELETE - @DeleteMapping
+
+## Request Param
+- Saat kita belajar Java Servlet, kita sudah tahu untuk mendapatkan Query/Request Parameter dari ServletRequest 
+- Namun di Spring, kita bisa menggunakan Annotation @RequestParam untuk memberitahu bahwa kita membutuhkan request parameter 
+- Selain itu, kita bisa menambahkan apakah query parameter itu wajib atau tidak, dan juga bisa menambahkan default value nya jika tidak dikirim oleh user 
+- Secara otomatis data request parameter akan dikirim datanya ke parameter yang kita tentukan
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestParam.html 
+
+## Konversi Tipe data
+- Kita tahu bahwa query parameter itu datanya adalah String
+- Namun jika kita membutuhkan datanya dalam bentuk tipe data lain, Spring bisa secara otomatis melakukan konversi tipe datanya menggunakan fitur Converter yang pernah kita bahas di materi Spring Config Properties

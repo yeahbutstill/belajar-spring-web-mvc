@@ -1,4 +1,4 @@
-package com.yeahbutstill.mvc.integration;
+package com.yeahbutstill.mvc.controllers.integration;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
