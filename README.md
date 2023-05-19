@@ -143,3 +143,9 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 ## Konversi Tipe data
 - Kita tahu bahwa query parameter itu datanya adalah String
 - Namun jika kita membutuhkan datanya dalam bentuk tipe data lain, Spring bisa secara otomatis melakukan konversi tipe datanya menggunakan fitur Converter yang pernah kita bahas di materi Spring Config Properties
+
+## Response Body
+- Secara default, kita harus menuliskan response dari Controller Method ke HttpServletResponse
+- Namun hal ini kadang menyulitkan jika misal kita hanya ingin mengembalikan data berupa String
+- Spring memiliki annotation @ResponseBody, yang bisa secara otomatis menjadikan data yang dikembalikan dari Controller Method menjadi data yang ditulis ke HttpServletResponse
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/ResponseBody.html 
