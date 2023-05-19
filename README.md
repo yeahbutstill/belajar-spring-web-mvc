@@ -149,3 +149,9 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Namun hal ini kadang menyulitkan jika misal kita hanya ingin mengembalikan data berupa String
 - Spring memiliki annotation @ResponseBody, yang bisa secara otomatis menjadikan data yang dikembalikan dari Controller Method menjadi data yang ditulis ke HttpServletResponse
 - https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/ResponseBody.html 
+
+## Request Content Type
+- Saat kita membuat Controller Method, kita juga bisa membatasi jenis Content-Type yang dikirim oleh user
+- Contoh pada kasus melakukan submit data form, kita biasanya meminta Content-Type yang dikirim oleh user adalah application/x-www-form-urlencoded
+- Untuk membatasi tipe Content-Type, kita bisa tambahkan di @RequestMapping pada attribute consume
+
