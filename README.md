@@ -155,3 +155,7 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Contoh pada kasus melakukan submit data form, kita biasanya meminta Content-Type yang dikirim oleh user adalah application/x-www-form-urlencoded
 - Untuk membatasi tipe Content-Type, kita bisa tambahkan di @RequestMapping pada attribute consume
 
+## Response Content Type
+- Di @RequestMapping, selain consume, terdapat juga attribute produce, yang bisa kita gunakan untuk memberi tahu di HTTP Response, Content-Type dari response body yang dikembalikan
+
+

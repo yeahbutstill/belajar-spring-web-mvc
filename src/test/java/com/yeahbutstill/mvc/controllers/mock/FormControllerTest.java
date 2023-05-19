@@ -1,10 +1,11 @@
-package com.yeahbutstill.mvc.controllers;
+package com.yeahbutstill.mvc.controllers.mock;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -13,6 +14,7 @@ import static org.springframework.test.web.servlet.MockMvcBuilder.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
+
 @SpringBootTest
 @AutoConfigureMockMvc
 class FormControllerTest {
@@ -28,8 +30,15 @@ class FormControllerTest {
                         .queryParam("name", "yeahbutstill")
         ).andExpectAll(
                 status().isOk(),
-                content().string(Matchers.containsString("Hello yeahbutstill")),
-                content().contentType("text/plain;charset=UTF-8")
+                header().string(HttpHeaders.CONTENT_TYPE, Matchers.containsString(MediaType.TEXT_HTML_VALUE)),
+                content().string(Matchers.containsString("""
+                        <html>
+                            <body>
+                                <h1>Hello, yeahbutstill</h1>
+                            </body>
+                        </html>
+                        """)),
+                content().contentType("text/html;charset=UTF-8")
         );
     }
 
