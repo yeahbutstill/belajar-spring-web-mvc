@@ -1,12 +1,11 @@
-package com.yeahbutstill.mvc.controllers;
+package com.yeahbutstill.mvc.controllers.mock;
 
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,23 +14,26 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 
+
 @SpringBootTest
 @AutoConfigureMockMvc
-class OrderControllerTest {
+class UploadControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void testOrderProduct() throws Exception {
+    void testUpload() throws Exception {
         mockMvc.perform(
-                get("/order/10001/products/20")
-                        .contentType(MediaType.TEXT_PLAIN)
+                multipart("/upload/profile")
+                        .file(new MockMultipartFile("multipartFile",
+                                "profile.png", "image/png",
+                                getClass().getResourceAsStream("/images/profile.png")))
+                        .param("name", "yeahbutstill")
+                        .contentType(MediaType.MULTIPART_FORM_DATA)
         ).andExpectAll(
                 status().isOk(),
-                header().string(HttpHeaders.CONTENT_TYPE, Matchers.containsString(MediaType.TEXT_PLAIN_VALUE)),
-                content().string(Matchers.containsString("orderId: 10001, productId: 20")),
-                content().contentType("text/plain;charset=UTF-8")
+                content().string("Success save profile yeahbutstill to upload/profile.png")
         );
     }
 

@@ -181,6 +181,17 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Secara otomatis Spring Web MVC juga akan mengembil data dari Form Request atau Query Parameter
 - Seperti yang pernah kita praktekan di materi Request Content Type
 
+## Upload File
+- Upload File di Spring Web MVC bisa menggunakan cara seperti di Java Web Servlet, atau bisa menggunakan fitur di Spring Web MVC yang lebih mudah menggunakan annotation @RequestPart
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestPart.html
+- Untuk tipe data pada parameter nya, kita bisa gunakan MultipartFile
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/multipart/MultipartFile.html 
+
+## Upload File Properties
+- Spring memiliki pengaturan yang bisa kita atur untuk Upload File, misal kita ingin membatasi jumlah ukuran file, dan lain-lain
+- Semua pengaturan untuk upload file bisa kita tambahkan di application.properties, dengan prefix spring.servlet.multipart
+- Kita bisa lihat daftarnya disini :
+- https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.web 
 
 
 
