@@ -42,4 +42,20 @@ class FormControllerTest {
         );
     }
 
+    @Test
+    void testCreatePerson() throws Exception {
+        mockMvc.perform(
+                post("/form/person")
+                        .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                        .param("name", "yeahbutstill")
+                        .param("birthDate", "01-01-2000")
+                        .param("address", "Depok, Jawa Barat, Indonesia")
+        ).andExpectAll(
+                status().isOk(),
+                header().string(HttpHeaders.CONTENT_TYPE, Matchers.containsString(MediaType.TEXT_PLAIN_VALUE)),
+                content().string(Matchers.containsString("01-01-2000 yeahbutstill Depok, Jawa Barat, Indonesia")),
+                content().contentType("text/plain;charset=UTF-8")
+        );
+    }
+
 }

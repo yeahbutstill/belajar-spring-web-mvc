@@ -172,7 +172,15 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Dengan fitur ini, kita bisa membuat URL Path yang dinamis, dan bisa mendapatkan nilai dinamis di URL Path nya secara otomatis
 - Untuk menggunakan fitur ini, kita perlu tambahkan variable path nya di URL Path nya, dan juga menambahkan parameter dengan annotation @PathVariable
 - Path Variable juga memiliki kemampuan otomatis konversi tipe data dengan Converter
-- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/PathVariable.html 
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/PathVariable.html
+
+## Forn Request
+- Seperti pernah kita bahas di materi Java Servlet, untuk mendapatkan data Form Request, kita bisa menggunakan cara yang sama dengan mendapatkan data di Query Parameter
+- Begitu pula di Spring Web MVC
+- Untuk mendapatkan data di Form Request, kita bisa menggunakan annotation @RequestParam
+- Secara otomatis Spring Web MVC juga akan mengembil data dari Form Request atau Query Parameter
+- Seperti yang pernah kita praktekan di materi Request Content Type
+
 
 
 

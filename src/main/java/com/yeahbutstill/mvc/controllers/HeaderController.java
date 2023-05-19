@@ -14,11 +14,17 @@ public class HeaderController {
     @ResponseBody
     public ResponseEntity<String> header(@RequestHeader(name = "X-TOKEN") String token) {
         if (token.equals("yeahbutstill")) {
-            return ResponseEntity.ok("OK");
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body("OK");
         } else if (token.isEmpty() || token.isBlank()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("KO");
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body("KO");
         } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("KO");
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body("KO");
         }
     }
 
