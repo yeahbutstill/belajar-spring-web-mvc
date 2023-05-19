@@ -158,4 +158,14 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 ## Response Content Type
 - Di @RequestMapping, selain consume, terdapat juga attribute produce, yang bisa kita gunakan untuk memberi tahu di HTTP Response, Content-Type dari response body yang dikembalikan
 
+## Request Header
+- Untuk mendapatkan Http Request Header, seperti yang sudah kita pelajari di materi Java Servlet, kita bisa mendapatkannya melalui HttpServletRequest
+- Namun Spring WebMVC memiliki cara lebih mudah dengan menggunakan annotation @RequestHeader
+- Caranya kita bisa tambahkan di parameter di Controller Method
+- Kita juga bisa menentukan apakah wajib atau tidak, dan juga default value nya
+- Selain itu, fitur Converter juga bisa digunakan untuk Request Header
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestHeader.html 
+
+
+
 
