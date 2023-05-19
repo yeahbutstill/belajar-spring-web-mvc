@@ -193,6 +193,10 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Kita bisa lihat daftarnya disini :
 - https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.web 
 
+## Request Body
+- Saat kita membuat aplikasi web berupa RESTful API, kadang kita ingin mengirim data lewat Request Body dalam bentuk format data seperti JSON, XML, dan sejenisnya
+- Spring bisa digunakan untuk membaca data Request Body secara mudah, cukup menggunakan annotation @RequestBody
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestBody.html 
 
 
 
