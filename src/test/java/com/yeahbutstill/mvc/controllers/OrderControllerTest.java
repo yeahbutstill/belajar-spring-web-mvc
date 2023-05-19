@@ -1,4 +1,4 @@
-package com.yeahbutstill.mvc.controllers.mock;
+package com.yeahbutstill.mvc.controllers;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
@@ -17,38 +17,22 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class HeaderControllerTest {
+class OrderControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void testHeaderOk() throws Exception {
+    void testOrderProduct() throws Exception {
         mockMvc.perform(
-                get("/header/token")
+                get("/order/10001/products/20")
                         .contentType(MediaType.TEXT_PLAIN)
-                        .header("X-TOKEN", "yeahbutstill")
         ).andExpectAll(
                 status().isOk(),
                 header().string(HttpHeaders.CONTENT_TYPE, Matchers.containsString(MediaType.TEXT_PLAIN_VALUE)),
-                content().string(Matchers.containsString("OK")),
+                content().string(Matchers.containsString("orderId: 10001, productId: 20")),
                 content().contentType("text/plain;charset=UTF-8")
         );
     }
-
-    @Test
-    void testHeaderKo() throws Exception {
-        mockMvc.perform(
-                get("/header/token")
-                        .contentType(MediaType.TEXT_PLAIN)
-                        .header("X-TOKEN", "hahahaha")
-        ).andExpectAll(
-                status().isBadRequest(),
-                header().string(HttpHeaders.CONTENT_TYPE, Matchers.containsString(MediaType.TEXT_PLAIN_VALUE)),
-                content().string(Matchers.containsString("KO")),
-                content().contentType("text/plain;charset=UTF-8")
-        );
-    }
-
 
 }
