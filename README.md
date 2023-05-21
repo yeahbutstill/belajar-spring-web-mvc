@@ -211,5 +211,10 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Kita bisa return di Controller Method dengan object ResponseEntity
 - https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html 
 
+## Cookie
+- Cara membuat Cookie di Spring Web MVC bisa dilakukan dengan menggunakan HttpServletResponse seperti pada Java Servlet 
+- Namun untuk membaca Cookie yang dikirim oleh Web Browser, kita bisa otomatis menggunakan annotation @CookieValue
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/CookieValue.html 
+
 
 

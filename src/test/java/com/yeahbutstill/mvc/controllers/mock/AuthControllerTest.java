@@ -1,5 +1,6 @@
 package com.yeahbutstill.mvc.controllers.mock;
 
+import jakarta.servlet.http.Cookie;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +29,14 @@ class AuthControllerTest {
                 post("/auth/login")
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                         .accept(MediaType.APPLICATION_JSON)
-                        .param("username", "admin")
-                        .param("password", "admin")
+                        .param("username", "yeahbutstill")
+                        .param("password", "janjok")
         ).andExpectAll(
                 status().isOk(),
                 header().string(HttpHeaders.CONTENT_TYPE, Matchers.containsString(MediaType.APPLICATION_JSON_VALUE)),
                 content().string(Matchers.containsString("Login success")),
-                content().contentType("application/json")
+                content().contentType("application/json"),
+                cookie().value("username", Matchers.containsString("yeahbutstill"))
         );
     }
 
@@ -44,12 +46,30 @@ class AuthControllerTest {
                 post("/auth/login")
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                         .accept(MediaType.APPLICATION_JSON)
-                        .param("username", "admin")
+                        .param("username", "yeahbutstill")
                         .param("password", "rahasia")
         ).andExpectAll(
                 status().isUnauthorized(),
                 header().string(HttpHeaders.CONTENT_TYPE, Matchers.containsString(MediaType.APPLICATION_JSON_VALUE)),
                 content().string(Matchers.containsString("Login failed")),
+                content().contentType("application/json")
+        );
+    }
+
+    @Test
+    void testGetUser() throws Exception {
+        mockMvc.perform(
+                get("/auth/user")
+                        /*
+                         * karena cookie itu sebenarnya dia otomatis dikirim oleh browser, makanya kalau di unit test
+                         * mau engga mau kita harus kirimkan secara manual
+                         */
+                        .cookie(new Cookie("username", "yeahbutstill"))
+                        .accept(MediaType.APPLICATION_JSON)
+        ).andExpectAll(
+                status().isOk(),
+                header().string(HttpHeaders.CONTENT_TYPE, Matchers.containsString(MediaType.APPLICATION_JSON_VALUE)),
+                content().string(Matchers.containsString("Hello yeahbutstill")),
                 content().contentType("application/json")
         );
     }
