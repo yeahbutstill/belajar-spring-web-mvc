@@ -14,5 +14,6 @@ public class CreatePersonRequest {
     private String lastName;
     private String email;
     private String phone;
+    private CreateAddressRequest address; // nasted object of CreateAddressRequest
 
 }

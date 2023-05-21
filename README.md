@@ -222,6 +222,12 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Spring memiliki fitur dimana kita bisa melakukan binding attribute yang dikirim dengan class Java Bean yang kita buat menggunakan annotation @ModelAttribute
 - https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/ModelAttribute.html 
 
+## Nested Model
+- Salah satu yang powerfull di Model Attribute adalah, kita bisa otomatis juga membuat object dari nested attribute di Model
+- Misalnya pada kasus Person sebelumnya, misal saja terdapat sebuah attribute Address yang merupakan Java Bean lainnya
+- Untuk mengisi data Address, kita bisa gunakan . (titik), misal address.street, address.city dan seterusnya
 
+## List
+- Selain nested attribute, kita juga bisa 
 
 

@@ -31,11 +31,17 @@ class PersonControllerTest {
                         .param("lastName", "Sou")
                         .param("email", "J8nQo@example.com")
                         .param("phone", "081234567890")
+                        .param("address.street", "Jalan Banyak Lubang")
+                        .param("address.city", "Lampung")
+                        .param("address.country", "Indonesia")
+                        .param("address.postalCode", "12345")
         ).andExpectAll(
                 status().isCreated(),
                 content().contentType(MediaType.APPLICATION_FORM_URLENCODED_VALUE.concat(";charset=UTF-8")),
                 content().string(Matchers.containsString("Success create person " +
-                        "John Doe Sou with email J8nQo@example.com and phone 081234567890"))
+                        "John Doe Sou with email J8nQo@example.com and phone 081234567890 with address " +
+                        "Jalan Banyak Lubang, Lampung, Indonesia, 12345")
+                )
         );
     }
 
