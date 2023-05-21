@@ -198,6 +198,18 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Spring bisa digunakan untuk membaca data Request Body secara mudah, cukup menggunakan annotation @RequestBody
 - https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestBody.html 
 
+## Response Status
+- Saat kita membuat HTTP Response, kadang kita ingin mengubah Response Status Code 
+- Secara default, response sukses adalah 200, kadang mungkin kita ingin ubah secara manual 
+- Jika kita ingin ubah secara dinamis, kita bisa gunakan HttpServletResponse 
+- Atau jika kita ingin hardcode response status nya, kita bisa gunakan annotation @ResponseStatus di Controller Method nya
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/ResponseStatus.html 
+
+## Response Entity
+- Sekarang kita sudah tahu beberapa cara membuat HTTP Response, dari menggunakan HttpServletResponse dan @ResponseBody 
+- Spring menyediakan cara yang sangat flexible untuk membuat HTTP Response menggunakan object ResponseEntity 
+- Kita bisa return di Controller Method dengan object ResponseEntity
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html 
 
 
 
