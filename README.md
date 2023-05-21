@@ -238,3 +238,13 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
   - namaParam[0].field2=data2
   - namaParam[1].field1=data1
   - namaParam[1].field2=data2
+
+## JSON
+- Seperti Web MVC terintegrasi dengan baik dengan library Jackson untuk menangani tipe data JSON, baik untuk consume dari Request Body atau produce ke Response Body
+- Saat kita menggunakan consume dengan tipe data JSON atau produce dengan tipe data JSON, kita tidak perlu secara manual melakukan konversi dari object ke JSON String, hal itu sudah otomatis di handle oleh Jackson
+
+## Konfigurasi Jackson
+- Kita tidak perlu membuat Bean Jackson secara manual lagi, karena itu sudah di handle oleh Spring Boot
+- Jika kita butuh melakukan konfigurasi untuk Jackson, kita bisa menggunakan application properties
+- Semua daftar konfigurasinya bisa kita gunakan dengan prefix spring.jackson.
+- https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.json
