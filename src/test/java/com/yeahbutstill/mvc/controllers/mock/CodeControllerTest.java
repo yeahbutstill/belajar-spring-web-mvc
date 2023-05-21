@@ -1,4 +1,4 @@
-package com.yeahbutstill.mvc.controllers;
+package com.yeahbutstill.mvc.controllers.mock;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
