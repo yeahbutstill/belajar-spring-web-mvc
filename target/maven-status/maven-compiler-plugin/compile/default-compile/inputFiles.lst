@@ -1,6 +1,7 @@
 /home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/BelajarSpringMvcApplication.java
 /home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/services/impl/HelloServiceImpl.java
 /home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/controllers/PersonController.java
+/home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/controllers/ErrorPageController.java
 /home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/controllers/BodyController.java
 /home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/controllers/HelloController.java
 /home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/controllers/DateController.java

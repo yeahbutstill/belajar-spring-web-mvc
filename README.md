@@ -276,3 +276,20 @@ Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
 - https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/ExceptionHandler.html 
 - Kita harus tentukan jenis exception apa yang akan ditangkap, kalau temen-temen menggunakan Parent Exception nya, maka semua Child Exception nya akan ditangkap juga, dan jika butuh data exception nya, kita bisa tambahkan sebagai parameter di Method nya
 
+## Error Page
+- Saat terjadi exception yang tidak tertangani oleh Exception Handler, secara default Spring WebMVC akan mengirim detail errornya ke path "/error"
+- jika tidak ada Controller Method dengan Route/error, maka Spring akan menampilkan default Page untuk error tersebut
+
+## Error Page Properties
+- Secara default, detail error tidak ditampilkan di error page, hal ini agar stacktrace tidak terexpose ketika terjadi error
+- Semua detail properties untuk error page bisa kita setting di application properties dengan prefix server.error
+- https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.server 
+
+## Membuat Error Detail Sendiri
+- Kita juga bisa membuat error detail page sendiri jika mau, namun kita harus mematikan fitur error detail page bawaan dari Spring Boot dengan menambahkan properties
+- server.error.whitelabel.enable=false
+- Selanjutnya kita bisa membuat controller dengan route /error, namun kita wajib mengimplement interface ErrorController
+- https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/servlet/error/ErrorController.html
+- Dan ketika kita membuat error page, jika ingin mendapatkan detail errornya, kita bisa menggunakan HttpServletRequest, dengan mengambil attribute dengan key prefix RequestDispatcher.ERROR_*
+
+

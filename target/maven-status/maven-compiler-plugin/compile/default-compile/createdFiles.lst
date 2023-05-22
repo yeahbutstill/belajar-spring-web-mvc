@@ -12,6 +12,7 @@ com/yeahbutstill/mvc/models/HelloRequest.class
 com/yeahbutstill/mvc/controllers/CodeController.class
 com/yeahbutstill/mvc/controllers/PersonApiController.class
 com/yeahbutstill/mvc/controllers/DateController.class
+com/yeahbutstill/mvc/controllers/ErrorPageController.class
 com/yeahbutstill/mvc/controllers/UploadController.class
 com/yeahbutstill/mvc/models/HelloResponse.class
 com/yeahbutstill/mvc/controllers/BodyController.class
