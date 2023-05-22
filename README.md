@@ -292,4 +292,11 @@ Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
 - https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/servlet/error/ErrorController.html
 - Dan ketika kita membuat error page, jika ingin mendapatkan detail errornya, kita bisa menggunakan HttpServletRequest, dengan mengambil attribute dengan key prefix RequestDispatcher.ERROR_*
 
+## Binding Result
+- Secara default, jika terjadi error di @ModelAttribute atau @RequestBody, maka akan throw exception MethodArgumentNotValidException
+- Kadang kita tidak ingin hal itu terjadi, misal kita ingin tetap masuk ke Controller Method, karena di dalam nya kita ingin menampilkan halaman errornya misalnya
+- Pada kasus seperti itu, kita bisa tambahkan parameter BindingResult di sebelah parameter nya, secara otomatis detail error akan dimasukan ke object BindingResult
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/validation/BindingResult.html 
+
+
 
