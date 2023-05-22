@@ -248,3 +248,11 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Jika kita butuh melakukan konfigurasi untuk Jackson, kita bisa menggunakan application properties
 - Semua daftar konfigurasinya bisa kita gunakan dengan prefix spring.jackson.
 - https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.json
+
+## Validation
+- Spring WebMVC terintegrasi dengan baik dengan Bean Validation seperti yang sudah kita bahas di materi Spring Validation
+- Saat kita membuat parameter @ModelAttribute atau @RequestBody, jika object tersebut ingin di validasi secara otomatis menggunakan Bean Validation, kita bisa tambahkan annotation @Valid
+- Jika data tidak valid, secara otomatis Spring akan mengembalikan response 400 Bad Request
+- Khusus validasi di Controller, exception yang akan dibuat adalah MethodArgumentNotValidException bukan ConstraintViolationException nya Bean Validation
+
+

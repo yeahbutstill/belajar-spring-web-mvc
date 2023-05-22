@@ -5,10 +5,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yeahbutstill.mvc.models.CreateAddressRequest;
 import com.yeahbutstill.mvc.models.CreatePersonRequest;
 import com.yeahbutstill.mvc.models.CreateSocialMediaRequest;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -59,10 +61,41 @@ class PersonApiControllerTest {
                         .content(jsonRequest)
         ).andExpectAll(
                 status().isCreated(),
-                content().contentType(MediaType.APPLICATION_JSON),
+                content().contentType(MediaType.APPLICATION_JSON_VALUE),
                 content().json(jsonRequest)
         );
     }
 
+    @Test
+    void testCreatePersonValidationError() throws Exception {
+        CreatePersonRequest request = new CreatePersonRequest();
+        request.setFirstName(null);
+        request.setMiddleName("John");
+        request.setLastName("Setiawan");
+        request.setAddress(new CreateAddressRequest());
+        request.getAddress().setStreet("Jalan 5555");
+        request.getAddress().setCity("Bandung");
+        request.getAddress().setCountry("Indonesia");
+        request.getAddress().setPostalCode("12345");
+        request.setHobbies(List.of("Coding", "Gaming", "Music"));
+        request.setEmail(null);
+        request.setSocialMedias(new ArrayList<>());
+        request.getSocialMedias().add(new CreateSocialMediaRequest("Facebook", "https://www.facebook.com/dani.setiawan"));
+        request.getSocialMedias().add(new CreateSocialMediaRequest("Instagram", "https://www.instagram.com/dani.setiawan"));
+        request.getSocialMedias().add(new CreateSocialMediaRequest("Twitter", "https://www.twitter.com/dani.setiawan"));
+        request.setPhone(null);
+
+        String jsonRequest = objectMapper.writeValueAsString(request);
+
+        mockMvc.perform(
+                post("/api/person")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON)
+                        .content(jsonRequest)
+        ).andExpectAll(
+                status().isBadRequest()
+        );
+
+    }
 
 }

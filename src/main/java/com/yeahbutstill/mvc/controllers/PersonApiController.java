@@ -1,6 +1,7 @@
 package com.yeahbutstill.mvc.controllers;
 
 import com.yeahbutstill.mvc.models.CreatePersonRequest;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,7 +22,7 @@ public class PersonApiController {
     )
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
-    public CreatePersonRequest createPerson(@RequestBody CreatePersonRequest request) {
+    public CreatePersonRequest createPerson(@RequestBody @Valid CreatePersonRequest request) {
         log.info("Request: {}", request);
         return request;
     }
