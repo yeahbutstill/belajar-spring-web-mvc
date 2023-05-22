@@ -3,6 +3,7 @@ com/yeahbutstill/mvc/controllers/AuthController.class
 com/yeahbutstill/mvc/utils/StringToDateConverter.class
 com/yeahbutstill/mvc/BelajarSpringMvcApplication.class
 com/yeahbutstill/mvc/controllers/FormController.class
+com/yeahbutstill/mvc/controllers/advice/ErrorController.class
 com/yeahbutstill/mvc/models/CreateSocialMediaRequest.class
 com/yeahbutstill/mvc/models/CreateAddressRequest.class
 com/yeahbutstill/mvc/controllers/OrderController.class

@@ -255,4 +255,24 @@ Jadi ketika ada perubahan di logic aplikasi, kita hanya fokus di bagian service,
 - Jika data tidak valid, secara otomatis Spring akan mengembalikan response 400 Bad Request
 - Khusus validasi di Controller, exception yang akan dibuat adalah MethodArgumentNotValidException bukan ConstraintViolationException nya Bean Validation
 
+## Exception Handler
+- Saat terjadi error di Controller, seperti validation error, logic error, dan lain-lain
+- Secara default, Spring akan mengembalikan response error sesuai jenis errornya
+- Kadang, kita ingin membuat halaman atau response error sendiri
+- Hal ini bisa kita buat dengan menggunakan @ControllerAdvice
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/ControllerAdvice.html 
+
+## Controller Advice
+- Controller Advice adalah sebuah class yang dipanggil ketika sebuah jenis exception terjadi
+- Dengan begitu kita bisa memanipulasi response yang akan dikembalikan ke user menggunakan Controller Advice ini
+- Jadi ini bener-benar mirip seperti Controller biasa, cuman bedanya itu akan di eksekusi ketika terjadi exception yang tidak di handle oleh si Controller nya
+- Contohnya, kita menambahkan Bean Validation, dia kan nanti error method, method argument not valid, nah kita bisa tambahkan Controller Advice untuk menghandle exception jenis tersebut
+
+Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
+
+### Exception Handler
+- Setelah membuat Controller Advice, untuk menangkap exception dan mengubah response nya, kita perlu membuat Method seperti di Controller biasa
+- Namun kita tidak menggunakan annotation @RequestMapping, melainkan @ExceptionHandler
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/ExceptionHandler.html 
+- Kita harus tentukan jenis exception apa yang akan ditangkap, kalau temen-temen menggunakan Parent Exception nya, maka semua Child Exception nya akan ditangkap juga, dan jika butuh data exception nya, kita bisa tambahkan sebagai parameter di Method nya
 

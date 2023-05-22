@@ -93,7 +93,9 @@ class PersonApiControllerTest {
                         .accept(MediaType.APPLICATION_JSON)
                         .content(jsonRequest)
         ).andExpectAll(
-                status().isBadRequest()
+                status().isBadRequest(),
+                content().contentType(MediaType.APPLICATION_JSON_VALUE),
+                content().string(Matchers.containsString("Validation Error"))
         );
 
     }

@@ -9,6 +9,7 @@
 /home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/controllers/PersonApiController.java
 /home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/services/HelloService.java
 /home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/models/HelloRequest.java
+/home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/controllers/advice/ErrorController.java
 /home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/models/CreateAddressRequest.java
 /home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/controllers/FormController.java
 /home/yeahbutstill/IdeaProjects/belajar-spring-web-mvc/src/main/java/com/yeahbutstill/mvc/services/impl/HelloServiceMayaImpl.java
