@@ -339,6 +339,10 @@ Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
 - Oleh karena itu, jika butuh melakukan modifikasi, kita bisa kombinasikan Incterceptor dan Argument Resolver
 - Misal dengan mengirim data dari Interceptor melalui Request Attribute, dan diterima di Argument Resolver
 
-
-
+## Static Resource
+- Saat kita membuat website, kita sering membuat konten static, misal html, css js, images, video dan sejenisnya
+- Jika kita handle semua dengan membuat Controller atau Servlet, maka akan menyulitkan
+- Untungnya, Spring WebMVC memiliki fitur untuk menangani Static Resource ini
+- Kita bisa menambahkan semua resource static di folder static di derectory resources
+- Ketika kita mengakses Path di Spring Web MVC, pertama Spring akan mencoba mencari Controller yang memiliki Request Mapping tersebut, jika tidak ada, secara otomatis akan mencoba mengakses Static Resource, jika ternyata masih tidak ada, maka baru akan mengembalikan 404 Not Found
 

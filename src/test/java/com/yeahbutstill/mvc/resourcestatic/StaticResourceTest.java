@@ -1,6 +1,5 @@
-package com.yeahbutstill.mvc.controllers.mock;
+package com.yeahbutstill.mvc.resourcestatic;
 
-import com.yeahbutstill.mvc.models.User;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,28 +13,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class UserControllerTest {
+class StaticResourceTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void getCurrentUser() throws Exception {
+    void getStaticResource() throws Exception {
         mockMvc.perform(
-                get("/user/current")
-                        .sessionAttr("user", new User("yeahbutstill", "janjok"))
+                get("/index.html")
         ).andExpectAll(
                 status().isOk(),
-                content().string(Matchers.containsString("Hello yeahbutstill"))
-        );
-    }
-
-    @Test
-    void getUserInvalid() throws Exception {
-        mockMvc.perform(
-                get("/user/current")
-        ).andExpectAll(
-                status().is3xxRedirection()
+                content().string(Matchers.containsString("Hello World"))
         );
     }
 
