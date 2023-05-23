@@ -304,6 +304,11 @@ Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
 - https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/SessionAttribute.html 
 - Tapi perlu diingat Session itu datanya di simpan di memory si aplikasinya, jadi nanti temen-temen kalau jalankan 2 aplikasi yang berbeda maka sessionnya tidak akan bergabung. makannya penggunaan session sebenarnya ini jarang digunakan ketika aplikasinya lebih dari 1 server
 
+## MVC Config
+- Saat membuat aplikasi web menggunakan Spring Web MVC, kita bisa menambahkan pengaturan untuk Spring Web MVC
+- Caranya kita perlu membuat sebuah Bean configuration turunan dari WebMvcConfigurer
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html
+- Ada banyak sekali method yang bisa kita override untuk menambah konfigurasi yang ada di Spring Web MVC
 
 
 
