@@ -298,5 +298,12 @@ Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
 - Pada kasus seperti itu, kita bisa tambahkan parameter BindingResult di sebelah parameter nya, secara otomatis detail error akan dimasukan ke object BindingResult
 - https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/validation/BindingResult.html 
 
+## Session Attribute
+- Seperti yang pernah dibahas di materi Java Servlet, bahwa di Java Servlet, kita bisa membuat Session
+- Spring WebMVC menyediakan cara mudah untuk mengakses data di Session menggunakan annotation @SessionAttribute
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/SessionAttribute.html 
+- Tapi perlu diingat Session itu datanya di simpan di memory si aplikasinya, jadi nanti temen-temen kalau jalankan 2 aplikasi yang berbeda maka sessionnya tidak akan bergabung. makannya penggunaan session sebenarnya ini jarang digunakan ketika aplikasinya lebih dari 1 server
+
+
 
 
