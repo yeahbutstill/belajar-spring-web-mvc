@@ -373,3 +373,9 @@ Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
 - Untuk menampilkan View, kita bisa mengembalikan return object ModelAndView pada Controller Method
 - Dalam ModelAndView, kita bisa memasukan data template yang dipilih untuk View, dan juga Model yang akan ditampilkan di View
 - https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/ModelAndView.html 
+
+## Redirect
+- Jika kita ingin melakukan Redirect, selain menggunakan HttpServletResponse 
+- Jika pada kasus di Controller Method mengembalikan ModelAndView 
+- Kita bisa gunakan view name dengan prefix redirect:
+- Secara otomatis Spring Web MVC akan melakukan redirect
