@@ -368,3 +368,8 @@ Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
 - Template Mustache bisa kita simpan di folder /resources/templates/ dengan extension .mustache 
 - Semua pengaturan bisa digunakan via application properties
 - https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.templating 
+
+## Model And View
+- Untuk menampilkan View, kita bisa mengembalikan return object ModelAndView pada Controller Method
+- Dalam ModelAndView, kita bisa memasukan data template yang dipilih untuk View, dan juga Model yang akan ditampilkan di View
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/ModelAndView.html 

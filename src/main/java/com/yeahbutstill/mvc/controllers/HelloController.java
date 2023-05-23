@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.Objects;
 
 @Controller
@@ -44,6 +46,14 @@ public class HelloController {
         String responseBody = helloService.hello(name);
         response.getWriter().println(responseBody);
 
+    }
+
+    @GetMapping(path = "/web/hello")
+    public ModelAndView helloWeb(@RequestParam(name = "name", required = false) String name) {
+        return new ModelAndView("hello", Map.of(
+                "name", name,
+                "title", "Yuk Belajar View " + name
+        ));
     }
 
 }
