@@ -401,3 +401,11 @@ Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
 - Response dari RestTemplate adalah object ResponseEntity
 - https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html
 - Pada kasus server mengembalikan data JSON, kita bisa otomatis melakukan konversi menjadi Object dengan bantuan Jackson secara otomatis
+
+## Servlet Integration
+- Saat kita membuat WebServlet atau WebFilter, secara default Spring WebMVC tidak akan meregistrasikan ke Embedded Apache Tomcat
+- Jika kita ingin membuat WebServlet dan WebFilter, dan ingin Spring otomatis meregistrasikan nya ke Embedded Apache Tomcat, maka kita perlu menggunakan annotation ServletComponentScan
+- https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/servlet/ServletComponentScan.html
+- Tapi sebenarnya saya tidak menyarankan ya, ketika temen-temen sudah menggunakan Spring WebMVC, temen-temen masih menggunakan WebServlet ata WebFilter secara manual, jadi lebih baik gunakan fitur-fiturnya yang ada di Spring WebMVC.
+- Karena untuk membuat WebServlet, teman-teman cukup bikin Controller saja.
+- Kalau untuk membuat WebFilter, teman-teman cukup bikin Interceptor saja.
