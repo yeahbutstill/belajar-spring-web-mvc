@@ -379,3 +379,8 @@ Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
 - Jika pada kasus di Controller Method mengembalikan ModelAndView 
 - Kita bisa gunakan view name dengan prefix redirect:
 - Secara otomatis Spring Web MVC akan melakukan redirect
+
+## Rest Controller
+- Sebelumnya kita tahu untuk membuat Controller, kita menggunakan annotation Controller
+- Spring Web MVC menyediakan annotation khusus untuk membuat Controller khusus untuk RESTful API, yaitu annotation @RestController
+- RestController ini sebenarnya gabungan antara @Controller dan @ResponseBody, yang artinya secara otomatis semua return Controller Method tersebut dianggap sebagai Response Body

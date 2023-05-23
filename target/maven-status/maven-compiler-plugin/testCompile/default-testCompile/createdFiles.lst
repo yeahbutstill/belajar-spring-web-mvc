@@ -1,12 +1,16 @@
 com/yeahbutstill/mvc/service/HelloServiceImplTest.class
 com/yeahbutstill/mvc/controllers/integration/HelloControllerIntegrationTest.class
+com/yeahbutstill/mvc/controllers/rest/TodoControllerTest.class
 com/yeahbutstill/mvc/controllers/mock/CodeControllerTest.class
+com/yeahbutstill/mvc/resourcestatic/StaticResourceTest.class
 com/yeahbutstill/mvc/controllers/mock/UploadControllerTest.class
 com/yeahbutstill/mvc/controllers/mock/DateControllerTest.class
 com/yeahbutstill/mvc/controllers/mock/BodyControllerTest.class
+com/yeahbutstill/mvc/controllers/mock/PartnerControllerTest.class
 com/yeahbutstill/mvc/controllers/mock/AuthControllerTest.class
 com/yeahbutstill/mvc/BelajarSpringMvcApplicationTests.class
 com/yeahbutstill/mvc/controllers/mock/HeaderControllerTest.class
+com/yeahbutstill/mvc/controllers/mock/UserControllerTest.class
 com/yeahbutstill/mvc/controllers/mock/PersonControllerTest.class
 com/yeahbutstill/mvc/controllers/mock/HelloControllerTest.class
 com/yeahbutstill/mvc/controllers/mock/FormControllerTest.class
