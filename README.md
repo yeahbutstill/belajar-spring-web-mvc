@@ -384,3 +384,20 @@ Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
 - Sebelumnya kita tahu untuk membuat Controller, kita menggunakan annotation Controller
 - Spring Web MVC menyediakan annotation khusus untuk membuat Controller khusus untuk RESTful API, yaitu annotation @RestController
 - RestController ini sebenarnya gabungan antara @Controller dan @ResponseBody, yang artinya secara otomatis semua return Controller Method tersebut dianggap sebagai Response Body
+
+## Rest Template
+- Saat kita membuat aplikasi Web / RESTful API, kadang kita juga butuh memanggil/mengirim data ke Server Web/RESTful API lainnya
+- Spring sudah menyediakan class bernama RestTemplate, yang bisa kita gunakan sebagai HTTP Client / RESTful Client
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html
+
+## Rest Template Builder
+- Untuk membuat RestTemplate, kita bisa menggunakan RestTemplateBuilder, yang secara otomatis sudah dibuatkan sebagai Bean oleh Spring Boot
+- Sebelum membuat RestTemplate, kita bisa melakukan konfigurasi terlebih dahulu di RestTemplateBuilder
+- https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/client/RestTemplateBuilder.html 
+
+## Request & Response Entity
+- Untuk mengirim request, kita bisa menggunakan RestTemplate.exchange(), dimana kita perlu membuat RequestEntity
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/RequestEntity.html
+- Response dari RestTemplate adalah object ResponseEntity
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html
+- Pada kasus server mengembalikan data JSON, kita bisa otomatis melakukan konversi menjadi Object dengan bantuan Jackson secara otomatis

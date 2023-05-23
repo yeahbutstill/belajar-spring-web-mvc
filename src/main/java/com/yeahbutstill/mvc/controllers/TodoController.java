@@ -1,4 +1,4 @@
-package com.yeahbutstill.mvc.controllers.rest;
+package com.yeahbutstill.mvc.controllers;
 
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

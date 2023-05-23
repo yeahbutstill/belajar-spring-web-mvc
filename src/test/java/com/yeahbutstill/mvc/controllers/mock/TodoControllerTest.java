@@ -1,4 +1,4 @@
-package com.yeahbutstill.mvc.controllers.rest;
+package com.yeahbutstill.mvc.controllers.mock;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;

@@ -1,8 +1,6 @@
 
 v
 Fsrc/main/java/com/yeahbutstill/mvc/services/impl/HelloServiceImpl.java,6/5/652314a544df4d821674dd06a8f2f597fcaa0d32
-Ž
-^src/test/java/com/yeahbutstill/mvc/controllers/integration/HelloControllerIntegrationTest.java,9/e/9eeec60f499674c6a6096fda2a12b9177c4323f7
 {
 Ksrc/test/java/com/yeahbutstill/mvc/controllers/mock/AuthControllerTest.java,d/5/d5527ed932d8d5ea6d43d4ec8ea47d8069a495fd
 s
@@ -33,8 +31,6 @@ u
 Esrc/main/java/com/yeahbutstill/mvc/controllers/PartnerController.java,2/8/284cdd0cec0291262cbf8b12d384410587f7395f
 
 Osrc/main/java/com/yeahbutstill/mvc/config/resolver/PartnerArgumentResolver.java,1/a/1af345bdac4c07d53bae5805a55fd9cc3d2d3a50
-j
-:src/main/java/com/yeahbutstill/mvc/config/MyWebConfig.java,0/9/09daff202c650b6c3fb95ddf9bca4d678a3689af
 f
 6src/main/java/com/yeahbutstill/mvc/models/Partner.java,2/0/206c4769d82b746159656df83c347dcd4ef705ee
 }
