@@ -310,5 +310,35 @@ Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
 - https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html
 - Ada banyak sekali method yang bisa kita override untuk menambah konfigurasi yang ada di Spring Web MVC
 
+## Interceptor
+- Saat kita belajar Java Servlet. kita tahu ada fitur yang bernama WebFilter, yang tugasnya mirip sebagai middleware
+- Di Spring WebMVC, kita bisa menggunakan fitur bernama interceptor, untuk melakukan hal yang sama
+- Cara melakukan registrasi Interceptor adalah dengan membuat class turunan dari HandlerInterceptor, lalu menambahkan menggunakan InterceptorRegistry di method addInterceptors() WebMvcConfigurer
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/HandlerInterceptor.html
+
+## Ant Path Matcher
+- Spring kebanyakan menggunakan Ant Path Matcher untuk pattern penulisan path
+- Format ini diambil dari sebuah library bernama Apache Ant
+- Untuk lebih detail, kita bisa cek di class AntPathMatcher
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/AntPathMatcher.html 
+
+## Argument Resolver
+- Saat kita menambahkan sebuah parameter di Controller Method, maka Spring Web MVC akan mencoba mencari dari mana data tersebut berasal 
+- Oleh karena itu kita perlu tambahkan penanda seperti ModelAttribute, RequestBody, RequestParam, dan lain-lain 
+- Kita juga bisa membuat sebuah ArgumentResolver, yaitu class yang digunakan untuk mengisi object argument yang kita inginkan secara otomatis 
+- Spring akan otomatis memanggil ArgumentResolver tersebut, ketika terdapat parameter dengan tipe data yang sudah kita tentukan
+
+## Handler Method Argument Resolver
+- Untuk membuat Argument Resolver, kita harus membuat class turunan HandlerMethodArgumentResolver 
+- Setelah itu kita harus registrasikan ke WebMvcConfigurer melalui method addArgumentResolvers()
+- https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/method/support/HandlerMethodArgumentResolver.html 
+
+## Kekurangan Menggunakan Argument Resolver
+- Argument Resolver hanyalaah untuk mengisi data yang terdapat di parameter Controller Method
+- Kita tidak bisa memodifikasi Http Response seperti di Interceptor
+- Oleh karena itu, jika butuh melakukan modifikasi, kita bisa kombinasikan Incterceptor dan Argument Resolver
+- Misal dengan mengirim data dari Interceptor melalui Request Attribute, dan diterima di Argument Resolver
+
+
 
 

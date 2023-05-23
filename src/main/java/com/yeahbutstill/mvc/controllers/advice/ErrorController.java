@@ -19,4 +19,9 @@ public class ErrorController {
         return ResponseEntity.badRequest().body("Validation Error : " + e.getMessage());
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> illegalArgumentException(IllegalArgumentException e) {
+        return ResponseEntity.internalServerError().body("Validation Error : " + e.getMessage());
+    }
+
 }

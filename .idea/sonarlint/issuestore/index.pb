@@ -9,8 +9,6 @@ Lsrc/test/java/com/yeahbutstill/mvc/controllers/mock/HelloControllerTest.java,c
 Ksrc/test/java/com/yeahbutstill/mvc/controllers/mock/AuthControllerTest.java,d/5/d5527ed932d8d5ea6d43d4ec8ea47d8069a495fd
 s
 Csrc/main/java/com/yeahbutstill/mvc/controllers/OrderController.java,4/d/4dea493e2c2b6c1d1da7af4461ccc89616567642
-z
-Jsrc/main/java/com/yeahbutstill/mvc/controllers/advice/ErrorController.java,7/d/7d57cf5f4a664cdeb6945f0c43d6bc626748d3ba
 €
 Psrc/test/java/com/yeahbutstill/mvc/controllers/mock/PersonApiControllerTest.java,1/3/138bb695441fcc44c5631afd1fb9820dbb3ebc02
 w

@@ -1,6 +1,5 @@
-package com.yeahbutstill.mvc.controllers.mock;
+package com.yeahbutstill.mvc.controllers;
 
-import com.yeahbutstill.mvc.models.User;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,28 +15,29 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class UserControllerTest {
+class PartnerControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void getCurrentUser() throws Exception {
+    void getCurrentPartner() throws Exception {
         mockMvc.perform(
-                get("/user/current")
-                        .sessionAttr("user", new User("yeahbutstill", "janjok"))
+                get("/partner/current")
+                        .header("X-API-KEY","yeahbutstill")
         ).andExpectAll(
                 status().isOk(),
-                content().string(Matchers.containsString("Hello yeahbutstill"))
+                content().string(Matchers.containsString("yeahbutstill : Sample Partner"))
         );
     }
 
     @Test
-    void getUserInvalid() throws Exception {
+    void getCurrentPartnerInvalidKey() throws Exception {
         mockMvc.perform(
-                get("/user/current")
+                get("/partner/current")
         ).andExpectAll(
-                status().is3xxRedirection()
+                status().isInternalServerError(),
+                content().string(Matchers.containsString("Unauthorized Exception"))
         );
     }
 
