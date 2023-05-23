@@ -346,3 +346,25 @@ Nah selanjutnya bagaimana kalau kita mau menghandle tiap jenis exceptionnya
 - Kita bisa menambahkan semua resource static di folder static di derectory resources
 - Ketika kita mengakses Path di Spring Web MVC, pertama Spring akan mencoba mencari Controller yang memiliki Request Mapping tersebut, jika tidak ada, secara otomatis akan mencoba mengakses Static Resource, jika ternyata masih tidak ada, maka baru akan mengembalikan 404 Not Found
 
+## View
+- Samapi sekarang, kita sudah membahas tentang Controller di Spring WebMVC
+- Kita belum pernah membahas tentang View
+- Sebelumnya kita hanya mengembalikan konten web secara manual di Controller
+- Spring WebMVC sendiri tidak membuat fitur untuk View / Templating secara manual
+- Spring WebMVC mengintegrasikan banyak sekali teknologi untuk Templating yang digunakan sebagai bagian dari View nya
+
+## View Yang Didukung
+- Spring WebMVC mendukung banyak sekali library untuk View, misalnya 
+- JSP (Java Server Page)
+- Apache Velocity : https://velocity.apache.org/
+- Apache Freemarker : https://freemarker.apache.org/
+- Mustache : https://mustache.github.io/
+- Thymeleaf : https://www.thymeleaf.org/
+- Di vidio ini, kita akan bahas integrasi dengan Mustache, namun untuk detail dari Mustache tidak dibahas di materi ini, karena sudah dibahas di materi kelas Java Mustache
+
+## Mustache
+- Saat kita menambahkan dependecy Spring Boot Mustache, kita tidak perlu melakukan pengaturan secara manual lagi untuk membuat Mustache 
+- Semua sudah diatur secara otomatis oleh Spring Boot 
+- Template Mustache bisa kita simpan di folder /resources/templates/ dengan extension .mustache 
+- Semua pengaturan bisa digunakan via application properties
+- https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.templating 
